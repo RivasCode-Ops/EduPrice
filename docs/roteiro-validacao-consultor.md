@@ -4,12 +4,13 @@
 
 **Meta:** 2–3 entrevistas · 20–30 min cada · gestor(a) de escola, coordenador(a) ou dono(a)
 
-**Demo:** https://edu-price.vercel.app
+**Demo:** local — `npm run dev` → http://localhost:3000 (compartilhar tela na entrevista)
 
 ---
 
 ## Antes da entrevista
 
+- [ ] Rodar `npm run dev` e abrir http://localhost:3000
 - [ ] Abrir EduPrice com **Carregar mock** ou dados próximos da escola da pessoa
 - [ ] Ter papel e caneta / notas abertas (não gravar sem consentimento)
 - [ ] Explicar: *"Ferramenta em teste, sua opinião muda o produto"*

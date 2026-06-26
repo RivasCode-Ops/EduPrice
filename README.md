@@ -1,6 +1,15 @@
 # EduPrice
 
-Calculadora **modular** de precificação escolar — produto independente, preparado para integração futura com Picos do Saber (Calc-Roi).
+Calculadora **modular** de precificação escolar — produto **local**, preparado para integração futura com Picos do Saber (Calc-Roi).
+
+## Uso local
+
+```powershell
+npm install
+npm run dev
+```
+
+Abrir **http://localhost:3000** · Guia: `docs/USO-LOCAL.md` · Inventário (local vs online): `docs/inventario/`
 
 ## Arquitetura (spec modular)
 
