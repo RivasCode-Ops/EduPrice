@@ -26,9 +26,8 @@ function moduloPrecoPainelMestre(dadosEscola: DadosEscola): ConsultorResultado {
 
 | EduPrice | Picos do Saber (`gestao-engine.js`) |
 |----------|-------------------------------------|
-| `calcularModoConsultor` | `analisarVolume` + `calcularPlanos` + `calcularEquilibrio` |
-| `ConsultorResultado` | subset de `calcularGestao()` |
-| `src/core/` | equivalente isolado de `gestao-engine.js` |
+| `executarModoConsultor` / `EduPrice.calcularModoConsultor` | `analisarVolume` + `calcularPlanos` + `calcularEquilibrio` |
+| `src/modules/eduprice/domain/` | equivalente isolado de `gestao-engine.js` |
 
 ## Estratégia de embed
 

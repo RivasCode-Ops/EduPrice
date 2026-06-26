@@ -1,4 +1,4 @@
-import type { ConsultorInput } from "@/core/types";
+import type { ConsultorInput } from "@/modules/eduprice/domain/eduprice.types";
 
 const fields: Array<{
   key: keyof ConsultorInput;
@@ -22,7 +22,7 @@ type Props = {
   onSubmit: () => void;
 };
 
-export function ConsultorForm({ value, onChange, onSubmit }: Props) {
+export function ConsultantModeForm({ value, onChange, onSubmit }: Props) {
   return (
     <form
       className="space-y-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
@@ -39,7 +39,7 @@ export function ConsultorForm({ value, onChange, onSubmit }: Props) {
             type="number"
             min={0}
             step={step ?? "100"}
-            value={value[key]}
+            value={value[key] ?? 0}
             onChange={(e) =>
               onChange({ ...value, [key]: Number(e.target.value) || 0 })
             }
@@ -56,3 +56,6 @@ export function ConsultorForm({ value, onChange, onSubmit }: Props) {
     </form>
   );
 }
+
+/** @deprecated use ConsultantModeForm */
+export const ConsultorForm = ConsultantModeForm;

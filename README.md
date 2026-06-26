@@ -2,13 +2,17 @@
 
 Calculadora **modular** de precificação escolar — produto independente, preparado para integração futura com Picos do Saber (Calc-Roi).
 
-## Arquitetura (3 blocos)
+## Arquitetura (spec modular)
 
-| Bloco | Pasta | Responsabilidade |
-|-------|-------|------------------|
-| **Entrada** | `src/components/consultor/` | Formulários e UI |
-| **Análise** | `src/core/engine.ts` | Motor puro (sem React, sem API) |
-| **Saída** | `src/components/consultor/consultor-results.tsx` | Relatórios e recomendações |
+```
+src/modules/eduprice/
+  domain/        → pricing-engine, break-even, plans-comparison
+  application/   → consultant-mode.service
+  ui/            → EduPriceShell, ConsultantModeForm, ResultsDashboard
+  index.ts       → export EduPrice
+```
+
+Spec completa: `docs/ESPECIFICACAO.md` · Prompt Cursor: `docs/PROMPT-CURSOR.md`
 
 ## Modo Consultor (v0.1)
 
@@ -28,7 +32,7 @@ npm run build
 ## Integração futura (Picos do Saber)
 
 ```typescript
-import { EduPrice } from "@/core";
+import { EduPrice } from "@/modules/eduprice";
 
 const resultado = EduPrice.calcularModoConsultor({
   aluguel: 8500,

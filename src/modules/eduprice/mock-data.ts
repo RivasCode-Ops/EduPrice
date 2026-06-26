@@ -1,6 +1,5 @@
-import type { ConsultorInput } from "./types";
+import type { ConsultorInput } from "./domain/eduprice.types";
 
-/** Dados mock para desenvolvimento e demos */
 export const mockConsultorInput: ConsultorInput = {
   aluguel: 8500,
   salarios: 42000,

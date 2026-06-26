@@ -1,4 +1,4 @@
-import type { ConsultorResultado } from "@/core/types";
+import type { ConsultorResultado } from "@/modules/eduprice/domain/eduprice.types";
 import { fmtMoeda, fmtPct } from "@/lib/format";
 
 const semaforoClass: Record<string, string> = {
@@ -12,7 +12,7 @@ type Props = {
   isPreview?: boolean;
 };
 
-export function ConsultorResults({ resultado, isPreview }: Props) {
+export function ResultsDashboard({ resultado, isPreview }: Props) {
   const cards = [
     { label: "Mensalidade mínima", value: fmtMoeda(resultado.mensalidadeMinima) },
     { label: "Mensalidade ideal", value: fmtMoeda(resultado.mensalidadeIdeal) },
@@ -89,3 +89,6 @@ export function ConsultorResults({ resultado, isPreview }: Props) {
     </div>
   );
 }
+
+/** @deprecated use ResultsDashboard */
+export const ConsultorResults = ResultsDashboard;

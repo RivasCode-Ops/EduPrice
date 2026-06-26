@@ -1,30 +1,30 @@
 ---
-description: EduPrice — produto modular de precificação escolar
+description: EduPrice — especificação modular domain/application/ui
 alwaysApply: true
 ---
 
 # EduPrice
 
-Produto **independente** de precificação escolar. Não acoplar ao Picos do Saber nesta fase.
+Produto independente de precificação escolar. **Não integrar Picos do Saber (Fase 5).**
 
-## Arquitetura
+## Arquitetura (obrigatória)
 
 ```
-src/core/       → motor puro (engine.ts, types.ts) — SEM React
-src/components/ → UI (consultor/)
-src/app/        → rotas Next.js
-tests/          → Vitest no core
+src/modules/eduprice/
+  domain/        → lógica pura (pricing-engine, break-even, plans-comparison)
+  application/   → serviços (consultant-mode.service.ts)
+  ui/            → React (EduPriceShell, ConsultantModeForm, ResultsDashboard)
+  index.ts       → contrato público EduPrice
 ```
 
-## Regras
+## Princípios
 
-- Lógica de cálculo **somente** em `src/core/`
-- Resultados retornam objetos tipados (`ConsultorResultado`)
-- UI consome `@/core` — nunca duplicar fórmulas na UI
-- Integração futura via `EduPrice` export em `src/core/index.ts`
-- Não acessar Calc-Roi, Supabase ou APIs externas nesta fase
+- **UI sem fórmulas** — cálculo só em `domain/`
+- **Modo Consultor** = camada `application/` sobre `domain/`
+- Saídas tipadas (`ConsultorResultado`) — objetos estruturados
+- Sem banco, auth ou Picos nesta fase
+- Fases: 1 motor → 2 consultor → 3 UI → 4 relatórios → 5 integração
 
-## Modo Consultor
+## Spec completa
 
-Entrada: aluguel, salários, despesas, capacidade, lucro desejado.
-Saída: mensalidades, equilíbrio, planos, desconto máximo.
+Ver `docs/ESPECIFICACAO.md`
