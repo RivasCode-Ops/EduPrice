@@ -1,0 +1,30 @@
+---
+description: EduPrice — produto modular de precificação escolar
+alwaysApply: true
+---
+
+# EduPrice
+
+Produto **independente** de precificação escolar. Não acoplar ao Picos do Saber nesta fase.
+
+## Arquitetura
+
+```
+src/core/       → motor puro (engine.ts, types.ts) — SEM React
+src/components/ → UI (consultor/)
+src/app/        → rotas Next.js
+tests/          → Vitest no core
+```
+
+## Regras
+
+- Lógica de cálculo **somente** em `src/core/`
+- Resultados retornam objetos tipados (`ConsultorResultado`)
+- UI consome `@/core` — nunca duplicar fórmulas na UI
+- Integração futura via `EduPrice` export em `src/core/index.ts`
+- Não acessar Calc-Roi, Supabase ou APIs externas nesta fase
+
+## Modo Consultor
+
+Entrada: aluguel, salários, despesas, capacidade, lucro desejado.
+Saída: mensalidades, equilíbrio, planos, desconto máximo.
