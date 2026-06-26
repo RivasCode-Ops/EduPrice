@@ -4,7 +4,7 @@
 
 **Meta:** 2–3 entrevistas · 20–30 min cada · gestor(a) de escola, coordenador(a) ou dono(a)
 
-**Demo:** URL Vercel (após deploy — ver `docs/DEPLOY-VERCEL.md`) ou `npm run dev` → http://localhost:3000
+**Demo:** https://edu-price.vercel.app
 
 ---
 

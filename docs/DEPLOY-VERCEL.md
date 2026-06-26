@@ -2,6 +2,16 @@
 
 Repositório: https://github.com/RivasCode-Ops/EduPrice
 
+## URLs ativas
+
+| Ambiente | URL |
+|----------|-----|
+| **Produção** | https://edu-price.vercel.app |
+| **Preview** | https://edu-price-bmtdjb21y-rivaldoalexandrera-5430s-projects.vercel.app |
+| **Dashboard** | https://vercel.com/rivaldoalexandrera-5430s-projects/edu-price |
+
+Projeto Vercel: `edu-price` · scope: `rivaldoalexandrera-5430s-projects`
+
 ## Opção A — Dashboard (recomendada, ~2 min)
 
 1. Acesse https://vercel.com/new
